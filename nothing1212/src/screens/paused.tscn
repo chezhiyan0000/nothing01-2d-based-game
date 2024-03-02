@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://ui and gun/button/tile004.png" type="Texture" id=1]
+[ext_resource path="res://ui and gun/WhatsApp_Image_2023-03-07_at_20.42.10-removebg-preview (2) (1).png" type="Texture" id=2]
+[ext_resource path="res://src/userinterface/quit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/userinterface/HOME.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/userinterface/title.tscn" type="PackedScene" id=5]
+[ext_resource path="res://font/ui_theme.tres" type="Theme" id=6]
+[ext_resource path="res://src/userinterface/retry.gd" type="Script" id=7]
+[ext_resource path="res://src/screens/userinterface.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://font/BLKCHCRY.TTF"
+
+[sub_resource type="DynamicFont" id=2]
+size = 38
+outline_size = 1
+font_data = SubResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -365.0
+margin_top = 16.0
+margin_right = -292.0
+margin_bottom = 39.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Score: %s"
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.235294 )
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 5 )]
+margin_left = -98.5
+margin_top = -165.0
+margin_right = 98.5
+margin_bottom = -117.0
+theme = ExtResource( 6 )
+custom_fonts/font = SubResource( 2 )
+text = "YOU LOST"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -88.5
+margin_top = -88.5
+margin_right = 88.5
+margin_bottom = 126.5
+
+[node name="Retry" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_right = 177.0
+margin_bottom = 69.0
+text = "RETRY"
+icon = ExtResource( 1 )
+script = ExtResource( 7 )
+
+[node name="HOME" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 4 )]
+margin_top = 73.0
+margin_right = 177.0
+margin_bottom = 142.0
+
+[node name="quit3" parent="PauseOverlay/VBoxContainer" instance=ExtResource( 3 )]
+margin_top = 146.0
+margin_right = 177.0
+margin_bottom = 215.0
+icon = ExtResource( 2 )
+
+[connection signal="button_up" from="PauseOverlay/VBoxContainer/Retry" to="PauseOverlay/VBoxContainer/Retry" method="_on_Retry_button_up"]

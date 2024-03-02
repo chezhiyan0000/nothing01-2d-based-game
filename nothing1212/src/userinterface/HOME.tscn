@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/screens/HOME.gd" type="Script" id=1]
+[ext_resource path="res://ui and gun/button/tile042.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFontData" id=3]
+override_oversampling = 1.0
+font_path = "res://font/BLKCHCRY.TTF"
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 1
+outline_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+font_data = SubResource( 3 )
+
+[node name="HOME" type="Button"]
+margin_right = 136.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 4 )
+text = "HOME"
+icon = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[connection signal="button_up" from="." to="." method="_on_HOME_button_up"]

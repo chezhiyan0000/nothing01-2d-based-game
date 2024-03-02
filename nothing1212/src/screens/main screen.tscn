@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://o0isljficov1"]
+
+[ext_resource type="Texture2D" uid="uid://dcthqju1p4mk1" path="res://freetileset/png/BG/BG.png" id="1"]
+[ext_resource type="PackedScene" path="res://src/userinterface/title.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://src/userinterface/quit.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://src/userinterface/play.tscn" id="4"]
+[ext_resource type="Theme" uid="uid://cbc5jo4y8qxh4" path="res://font/ui_theme.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://carsylcmtjq7k" path="res://ui and gun/WhatsApp_Image_2023-03-07_at_20.42.10-removebg-preview (2) (1).png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c4ljeka510fvp" path="res://ui and gun/button/tile004.png" id="7"]
+
+[node name="main_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("5")
+
+[node name="Bg" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="Title" parent="." instance=ExtResource("2")]
+layout_mode = 0
+
+[node name="menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="play" parent="menu" instance=ExtResource("4")]
+layout_mode = 2
+icon = ExtResource("7")
+margin_bottom = 69.0
+
+[node name="quit" parent="menu" instance=ExtResource("3")]
+layout_mode = 2
+icon = ExtResource("6")
+
+[connection signal="button_up" from="menu/quit" to="menu/quit" method="_on_quit_button_up"]

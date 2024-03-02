@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://benh0ewbvkorx"
+path="res://.godot/imported/WhatsApp_Image_2023-03-07_at_20.42.10-removebg-preview.png-0298ca17f241b797d75d6ec3d3631d55.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://ui and gun/WhatsApp_Image_2023-03-07_at_20.42.10-removebg-preview.png"
+dest_files=["res://.godot/imported/WhatsApp_Image_2023-03-07_at_20.42.10-removebg-preview.png-0298ca17f241b797d75d6ec3d3631d55.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
